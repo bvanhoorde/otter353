@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/logo-removebg-preview.png">
 <title id="title-i18n">Otter 353 — Studentenhuis</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,8 +26,9 @@
   .nav-right { display: flex; align-items: center; gap: 1rem; }
   .lang-select { padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.85rem; font-family: inherit; color: var(--text); background: white; cursor: pointer; outline: none; }
   .lang-select:hover, .lang-select:focus { border-color: var(--green); }
-  .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(160deg, var(--green-light) 0%, #fff 60%); }
-  .hero-inner { max-width: 640px; }
+  .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(160deg, var(--green-light) 0%, #fff 60%); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: url('images/logo-removebg-preview.png') center/45% no-repeat; opacity: 0.045; pointer-events: none; }
+  .hero-inner { position: relative; z-index: 1; max-width: 640px; }
   .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 1rem; }
   .hero h1 > span { color: var(--green); }
   .hero h1 .hero-h1-line2 { white-space: nowrap; color: var(--text); }
@@ -142,7 +144,8 @@
   .form-submit { background: var(--green); color: white; padding: 0.85rem 2rem; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; font-family: inherit; }
   .form-submit:hover { background: #235f3e; transform: translateY(-1px); }
   .form-success { margin-top: 1rem; padding: 0.75rem 1rem; border-radius: 8px; background: #ecfdf3; color: #166534; font-size: 0.9rem; border: 1px solid #bbf7d0; }
-  footer { background: var(--text); color: #9ca3af; text-align: center; padding: 2rem; font-size: 0.85rem; }
+  footer { background: var(--text); color: #9ca3af; text-align: center; padding: 2.5rem 2rem 2rem; font-size: 0.85rem; }
+  .footer-logo { height: 56px; width: auto; opacity: 0.85; margin-bottom: 1rem; filter: brightness(0) invert(1); }
   footer strong { color: white; }
   .amenity-modal-overlay { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 2rem; }
   .amenity-modal-overlay.is-open { display: flex; }
@@ -242,13 +245,13 @@
     <p class="section-sub" style="margin-top:-1.5rem;margin-bottom:2rem" data-i18n="amen_click">Klik op de voorziening voor foto's en details.</p>
     <div class="amenities-grid">
       <div class="amenity-card" data-amenity-id="amen2" tabindex="0" role="button"><div class="amenity-icon">🍳</div><div class="amenity-name" data-i18n="amen2_name">Gedeelde keuken</div><div class="amenity-desc" data-i18n="amen2_desc">Volledig ingericht met oven, fornuis, magnetron en koelkast</div></div>
-      <div class="amenity-card" data-amenity-id="amen4" tabindex="0" role="button"><div class="amenity-icon">🛁</div><div class="amenity-name" data-i18n="amen4_name">Badkamer (1)</div><div class="amenity-desc" data-i18n="amen4_desc">Gedeeld door (5) bewoners van kamers zonder badkamer.</div></div>
-      <div class="amenity-card" data-amenity-id="amen3" tabindex="0" role="button"><div class="amenity-icon">🚽</div><div class="amenity-name" data-i18n="amen3_name">Afzonderlijk toilet (2)</div><div class="amenity-desc" data-i18n="amen3_desc">Gedeeld door (5) bewoners van kamers zonder badkamer.</div></div>
+      <div class="amenity-card" data-amenity-id="amen4" tabindex="0" role="button"><div class="amenity-icon">🛁</div><div class="amenity-name" data-i18n="amen4_name">Badkamer (1)</div><div class="amenity-desc" data-i18n="amen4_desc">Nieuwe badkamer met inloopdouche — gedeeld met 4 andere bewoners.</div></div>
+      <div class="amenity-card" data-amenity-id="amen3" tabindex="0" role="button"><div class="amenity-icon">🚽</div><div class="amenity-name" data-i18n="amen3_name">Afzonderlijk toilet (2)</div><div class="amenity-desc" data-i18n="amen3_desc">Nieuw toilet — gedeeld met 4 andere bewoners.</div></div>
       <div class="amenity-card" data-amenity-id="amen7" tabindex="0" role="button"><div class="amenity-icon">🚲</div><div class="amenity-name" data-i18n="amen7_name">Fietsenstalling</div><div class="amenity-desc" data-i18n="amen7_desc">Fietsen staan veilig binnen in de ruime fietsenstalling.</div></div>
-      <div class="amenity-card" data-amenity-id="amen10" tabindex="0" role="button"><div class="amenity-icon">🌳</div><div class="amenity-name" data-i18n="amen10_name">Gemeenschappelijke tuin</div><div class="amenity-desc" data-i18n="amen10_desc">Een gezellige plek – perfect om te chillen.</div></div>
-      <div class="amenity-card" data-amenity-id="amen1" style="cursor:default"><div class="amenity-icon">📶</div><div class="amenity-name" data-i18n="amen1_name">Snel wifi</div><div class="amenity-desc" data-i18n="amen1_desc">Gigabit glasvezel in het hele huis</div></div>
+      <div class="amenity-card" data-amenity-id="amen10" tabindex="0" role="button"><div class="amenity-icon">🌳</div><div class="amenity-name" data-i18n="amen10_name">Eigen tuin</div><div class="amenity-desc" data-i18n="amen10_desc">Geniet van de zon of chill even bij met je huisgenoten.</div></div>
+      <div class="amenity-card" data-amenity-id="amen1" style="cursor:default"><div class="amenity-icon">📶</div><div class="amenity-name" data-i18n="amen1_name">Snel wifi</div><div class="amenity-desc" data-i18n="amen1_desc">Snel wifi in alle kamers</div></div>
       <div class="amenity-card" data-amenity-id="amen9" tabindex="0" role="button"><div class="amenity-icon">🎯</div><div class="amenity-name" data-i18n="amen9_name">Darts</div><div class="amenity-desc" data-i18n="amen9_desc">Gezellige dartshoek om te ontspannen met je huisgenoten.</div></div>
-      <div class="amenity-card" data-amenity-id="amen8" tabindex="0" role="button"><div class="amenity-icon">🧹</div><div class="amenity-name" data-i18n="amen8_name">Gezamenlijke schoonmaak</div><div class="amenity-desc" data-i18n="amen8_desc">Regelmatige schoonmaak van gedeelde ruimtes</div></div>
+      <div class="amenity-card" data-amenity-id="amen8" tabindex="0" role="button"><div class="amenity-icon">🧹</div><div class="amenity-name" data-i18n="amen8_name">Schoonmaak</div><div class="amenity-desc" data-i18n="amen8_desc">Regelmatige schoonmaak van gedeelde ruimtes</div></div>
       <div class="amenity-card" data-amenity-id="amen11" style="cursor:default"><div class="amenity-icon">🧯</div><div class="amenity-name" data-i18n="amen11_name">Brandveiligheid</div><div class="amenity-desc" data-i18n="amen11_desc">Rookmelders en blusmiddelen aanwezig — voor je veiligheid.</div></div>
       <div class="amenity-card" data-amenity-id="amen6" tabindex="0" role="button"><div class="amenity-icon">📋</div><div class="amenity-name" data-i18n="amen6_name">Helder huisreglement</div><div class="amenity-desc" data-i18n="amen6_desc">Duidelijke afspraken voor een aangenaam samenleven.</div></div>
     </div>
@@ -322,6 +325,7 @@
 </section>
 
 <footer>
+  <img src="images/logo-removebg-preview.png" alt="Otter 353" class="footer-logo"><br>
   <span data-i18n-html="footer_line"><strong>Otter 353</strong> · Ottergemsesteenweg 353, 9000 Gent · vanhoordeb@gmail.com · +32 478 28 21 62</span><br>
   <span style="font-size:0.8rem;margin-top:0.5rem;display:block" data-i18n="footer_copyright">© 2026 Otter 353. Alle rechten voorbehouden.</span>
 </footer>
@@ -525,15 +529,15 @@ renderRooms();
       about_f1:'Verzorgd en goed onderhouden — alles is proper en in orde', about_f2:'Kosten inclusief — geen verrassingen', about_f3:'Eigen tuin — een groene plek om even buiten tot rust te komen',
       rooms_label:'Kamers', rooms_title:'Ontdek de kamers', rooms_sub:'Hieronder zie je een overzicht van alle kamers — met foto\'s, afmetingen en prijzen. Op dit moment zijn alle kamers bezet. Geïnteresseerd? Laat het ons weten en we contacteren je zodra er iets vrijkomt.',
       amen_label:'Voorzieningen', amen_title:'Alles wat je nodig hebt', amen_sub:'Alle voorzieningen zitten in de maandhuur — geen verborgen kosten.', amen_click:"Klik op de voorziening voor foto's en details.",
-      amen1_name:'Snel wifi', amen1_desc:'Gigabit glasvezel in het hele huis',
+      amen1_name:'Snel wifi', amen1_desc:'Snel wifi in alle kamers',
       amen2_name:'Gedeelde keuken', amen2_desc:'Volledig ingericht met oven, fornuis, magnetron en koelkast',
-      amen3_name:'Afzonderlijk toilet (2)', amen3_desc:'Gedeeld door (5) bewoners van kamers zonder badkamer.',
-      amen4_name:'Badkamer (1)', amen4_desc:'Gedeeld door (5) bewoners van kamers zonder badkamer.',
+      amen3_name:'Afzonderlijk toilet (2)', amen3_desc:'Nieuw toilet — gedeeld met 4 andere bewoners.',
+      amen4_name:'Badkamer (1)', amen4_desc:'Nieuwe badkamer met inloopdouche — gedeeld met 4 andere bewoners.',
       amen6_name:'Helder huisreglement', amen6_desc:'Duidelijke afspraken voor een aangenaam samenleven.',
       amen7_name:'Fietsenstalling', amen7_desc:'Fietsen staan veilig binnen in de ruime fietsenstalling.',
-      amen8_name:'Gezamenlijke schoonmaak', amen8_desc:'Regelmatige schoonmaak van gedeelde ruimtes',
+      amen8_name:'Schoonmaak', amen8_desc:'Regelmatige schoonmaak van gedeelde ruimtes',
       amen9_name:'Darts', amen9_desc:'Gezellige dartshoek om te ontspannen met je huisgenoten.',
-      amen10_name:'Gemeenschappelijke tuin', amen10_desc:'Een gezellige plek – perfect om te chillen.',
+      amen10_name:'Eigen tuin',       amen10_desc:'Geniet van de zon of chill even bij met je huisgenoten.',
       amen11_name:'Brandveiligheid', amen11_desc:'Rookmelders en blusmiddelen aanwezig — voor je veiligheid.',
       loc_label:'Locatie', loc_title:'Precies waar je moet zijn', loc_p:'Otter 353 ligt ideaal voor studenten: dicht bij campus, openbaar vervoer, supermarkten en het centrum.',
       address_label:'Adres',
@@ -569,15 +573,16 @@ renderRooms();
       about_f1:'Well maintained — everything is clean and in order', about_f2:'Bills included — no surprise costs', about_f3:'Private garden — a green spot to relax outdoors',
       rooms_label:'Rooms', rooms_title:'Explore the Rooms', rooms_sub:"Browse all rooms below — with photos, sizes and prices. All rooms are currently occupied. Interested? Let us know and we'll reach out when something becomes available.",
       amen_label:'Amenities', amen_title:'Everything you need', amen_sub:'All amenities are included in your monthly rent — no hidden fees.', amen_click:'Click on the amenity for photos and details.',
-      amen1_name:'High-Speed WiFi', amen1_desc:'Gigabit fibre broadband throughout the house',
+      amen1_name:'High-Speed WiFi', amen1_desc:'Fast WiFi available in all rooms',
       amen2_name:'Shared Kitchen', amen2_desc:'Fully equipped with oven, hob, microwave & fridge',
       amen3_name:'Separate toilet (2)', amen3_desc:'Shared by (5) residents of rooms without bathroom.',
-      amen4_name:'Bathroom (1)', amen4_desc:'Shared by (5) residents of rooms without bathroom.',
+      amen4_name:'Bathroom (1)', amen4_desc:'Brand new bathroom with walk-in shower — shared with 4 other residents.',
+      amen3_name:'Separate toilet (2)', amen3_desc:'Brand new toilet — shared with 4 other residents.',
       amen6_name:'Clear House Rules', amen6_desc:'Clear agreements for a pleasant shared living experience.',
       amen7_name:'Bike Storage', amen7_desc:'Bikes are stored safely indoors in the spacious bike shed.',
-      amen8_name:'Communal Cleaning', amen8_desc:'Regular cleaning of shared spaces',
+      amen8_name:'Cleaning', amen8_desc:'Regular cleaning of shared spaces',
       amen9_name:'Darts', amen9_desc:'Cosy darts corner to relax with your housemates.',
-      amen10_name:'Shared Garden', amen10_desc:'A cosy spot – perfect for chilling out.',
+      amen10_name:'Private Garden',       amen10_desc:'Soak up the sun or chill out with your housemates.',
       amen11_name:'Fire Safety', amen11_desc:'Smoke detectors and fire extinguishers — for your safety.',
       loc_label:'Location', loc_title:'Right where you need to be', loc_p:'Otter 353 is ideally located for students, with quick access to campus, public transport, supermarkets, and the city centre.',
       address_label:'Address',
