@@ -12,20 +12,9 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text); line-height: 1.6; }
-
-  /* INFO BANNER */
-  .info-banner {
-    background: #fffbeb; border-bottom: 2px solid #fde68a;
-    padding: 0.75rem 2rem; text-align: center; font-size: 0.92rem; color: #92400e;
-  }
+  .info-banner { background: #fffbeb; border-bottom: 2px solid #fde68a; padding: 0.75rem 2rem; text-align: center; font-size: 0.92rem; color: #92400e; }
   .info-banner strong { color: #78350f; }
-
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between; padding: 0.35rem 2rem;
-  }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0.35rem 2rem; }
   .logo { display: flex; align-items: center; }
   .logo img { height: 64px; width: auto; display: block; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -38,7 +27,6 @@
   .lang-select:hover, .lang-select:focus { border-color: var(--green); }
   .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(160deg, var(--green-light) 0%, #fff 60%); }
   .hero-inner { max-width: 640px; }
-  .hero-badge { display: inline-block; background: var(--green-light); color: var(--green); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 999px; margin-bottom: 1.5rem; border: 1px solid #b7dfc8; }
   .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 1rem; }
   .hero h1 > span { color: var(--green); }
   .hero h1 .hero-h1-line2 { white-space: nowrap; color: var(--text); }
@@ -64,30 +52,19 @@
   .about-features { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
   .about-feature { display: flex; gap: 0.75rem; align-items: flex-start; }
   .feature-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; margin-top: 0.45rem; flex-shrink: 0; }
-  .reviews-bg { background: #f9fafb; }
-  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
-  .review-card { background: white; border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border); display: flex; flex-direction: column; transition: box-shadow 0.2s, transform 0.2s; }
-  .review-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); transform: translateY(-2px); }
-  .review-quote { font-size: 0.95rem; color: var(--text); line-height: 1.6; margin-bottom: 1.25rem; flex: 1; font-style: italic; }
-  .review-quote::before { content: '"'; }
-  .review-quote::after { content: '"'; }
-  .review-name { font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 0.2rem; }
-  .review-study { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.75rem; }
-  .review-stars { color: #eab308; font-size: 1.1rem; letter-spacing: 0.1em; }
-
-  /* ROOMS */
   .rooms-bg { background: var(--white); }
-  .type-selector { display: flex; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
-  .type-btn { flex: 1; min-width: 200px; background: white; border: 2px solid var(--border); border-radius: 14px; padding: 0 0 1.25rem 0; cursor: pointer; text-align: left; transition: all 0.2s; font-family: inherit; overflow: hidden; }
-  .type-btn:hover { border-color: var(--green-mid); box-shadow: 0 4px 16px rgba(46,125,82,0.1); }
-  .type-btn.active { border-color: var(--green); background: var(--green-light); }
-  .type-btn-photo { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--green-light); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 0.75rem; }
-  .type-btn-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .type-btn-info { padding: 0 1.25rem; }
-  .type-btn-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; color: var(--text); }
-  .type-btn.active .type-btn-name { color: var(--green); }
-  .type-btn-count { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.4rem; }
-  .type-btn-price { font-size: 0.9rem; font-weight: 700; color: var(--green); }
+  .type-selector { display: flex; gap: 0; margin-bottom: 2.5rem; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #f9fafb; }
+  .type-btn { flex: 1; background: transparent; border: none; border-right: 1px solid var(--border); padding: 0.9rem 1.25rem; cursor: pointer; text-align: center; transition: all 0.2s; font-family: inherit; position: relative; }
+  .type-btn:last-child { border-right: none; }
+  .type-btn:hover { background: var(--green-light); }
+  .type-btn.active { background: var(--green); }
+  .type-btn-name { font-weight: 700; font-size: 0.95rem; color: var(--muted); }
+  .type-btn.active .type-btn-name { color: white; }
+  .type-btn-price { font-size: 0.82rem; font-weight: 600; color: var(--green); margin-top: 0.2rem; }
+  .type-btn.active .type-btn-price { color: rgba(255,255,255,0.85); }
+  .type-btn-count { display: none; }
+  .type-btn-photo { display: none; }
+  .type-btn-info { padding: 0; }
   .rooms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; animation: fadeIn 0.25s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   .room-card { background: white; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); transition: box-shadow 0.2s, transform 0.2s; display: flex; flex-direction: column; }
@@ -109,8 +86,6 @@
   .room-tag { font-size: 0.72rem; background: var(--green-light); color: var(--green); padding: 0.2rem 0.6rem; border-radius: 999px; font-weight: 500; }
   .room-btn { background: var(--green); color: white; border: none; border-radius: 8px; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: background 0.2s; width: 100%; }
   .room-btn:hover { background: #235f3e; }
-
-  /* ROOM MODAL */
   .room-modal-overlay { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 1.5rem; }
   .room-modal-overlay.open { display: flex; }
   .room-modal { background: white; border-radius: 16px; max-width: 640px; width: 100%; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 24px 60px rgba(0,0,0,0.3); }
@@ -133,8 +108,6 @@
   .room-modal-val { font-size: 0.95rem; font-weight: 600; }
   .room-modal-cta { background: var(--green); color: white; border: none; border-radius: 8px; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit; width: 100%; transition: background 0.2s; }
   .room-modal-cta:hover { background: #235f3e; }
-
-  /* AMENITIES */
   .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
   .amenity-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 1.25rem; text-align: center; transition: border-color 0.2s, box-shadow 0.2s; cursor: pointer; }
   .amenity-card:hover { border-color: var(--green-mid); box-shadow: 0 4px 16px rgba(46,125,82,0.1); }
@@ -184,27 +157,25 @@
   .amenity-modal-nav button { padding: 0.5rem 1rem; border: 1px solid var(--border); background: white; border-radius: 8px; cursor: pointer; font-size: 0.9rem; }
   .amenity-modal-nav button:hover { border-color: var(--green); color: var(--green); }
   .amenity-modal-empty { color: var(--muted); text-align: center; padding: 2rem; }
-  @media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr; } .type-selector { flex-direction: column; } }
   @media (max-width: 768px) {
     nav { padding: 0.35rem 1rem; } .nav-links { display: none; }
     .lang-select { padding: 0.35rem 0.6rem; font-size: 0.8rem; }
     .about-grid, .location-grid, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
     .form-row { grid-template-columns: 1fr; } section { padding: 3.5rem 1.25rem; }
+    .type-selector { flex-direction: column; }
   }
 </style>
 </head>
 <body>
 
-<!-- INFO BANNER -->
 <div class="info-banner" id="info-banner" data-i18n-html="info_banner">
-  🏠 <strong>Op dit moment zijn alle kamers verhuurd.</strong> Toon hieronder je interesse — we contacteren je als eerste zodra er een kamer vrijkomt.
+  🏠 <strong>Op dit moment zijn alle kamers verhuurd voor het lopend academiejaar.</strong> Geïnteresseerd voor het academiejaar 2026-2027? Neem contact op — we laten je als eerste weten zodra er een kamer vrijkomt.
 </div>
 
 <nav>
   <a href="#" class="logo"><img src="images/logo-removebg-preview.png" alt="Otter 353"></a>
   <ul class="nav-links">
     <li><a href="#about" data-i18n="nav_about">Over ons</a></li>
-    <li><a href="#reviews" data-i18n="nav_reviews">Beoordelingen</a></li>
     <li><a href="#rooms" data-i18n="nav_rooms">Kamers</a></li>
     <li><a href="#amenities" data-i18n="nav_amenities">Voorzieningen</a></li>
     <li><a href="#location" data-i18n="nav_location">Locatie</a></li>
@@ -215,7 +186,7 @@
       <option value="nl">Nederlands</option>
       <option value="en">English</option>
     </select>
-    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Toon interesse</a>
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Neem contact</a>
   </div>
 </nav>
 
@@ -225,11 +196,10 @@
     <p data-i18n="hero_p">Comfortabele, betaalbare studentenkamers in een gastvrij studentenhuis — alles om te studeren en van het studentenleven te genieten.</p>
     <div class="hero-btns">
       <a href="#rooms" class="btn-primary" data-i18n="hero_btn_rooms">Bekijk de kamers</a>
-      <a href="#contact" class="btn-outline" data-i18n="hero_btn_viewing">Toon je interesse</a>
+      <a href="#contact" class="btn-outline" data-i18n="hero_btn_viewing">Neem contact</a>
     </div>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">8</div><div class="stat-label" data-i18n="stat_rooms">Aantal kamers</div></div>
-      <div class="stat"><div class="stat-num">5★</div><div class="stat-label" data-i18n="stat_rating">Beoordeling bewoners</div></div>
       <div class="stat"><div class="stat-num">5min</div><div class="stat-label" data-i18n="stat_campus">Van campus</div></div>
     </div>
   </div>
@@ -242,7 +212,7 @@
       <div>
         <div class="section-label" data-i18n="about_label">Over het huis</div>
         <h2 class="section-title" data-i18n="about_title">Een fijne plek om te wonen en studeren</h2>
-        <p style="color:var(--muted);margin-bottom:1rem" data-i18n="about_p1">Otter 353 is een gezellig studentenhuis met moderne comfortabele kamers — ruim, verzorgd en instapklaar. Gelegen op een toplocatie dichtbij de campussen, vind je hier alles wat je nodig hebt om je studies te combineren met een fijn studentenleven.</p>
+        <p style="color:var(--muted);margin-bottom:1rem" data-i18n="about_p1">Otter 353 is een gezellig studentenhuis met moderne comfortabele kamers — ruim, kwalitatief onderhouden en instapklaar.</p>
         <p style="color:var(--muted)" data-i18n="about_p2">We zetten ons in voor een schoon, veilig en gastvrij huis — waar het welzijn van bewoners centraal staat.</p>
         <div class="about-features">
           <div class="about-feature"><div class="feature-dot"></div><span data-i18n="about_f1">Verzorgd en goed onderhouden — alles is proper en in orde</span></div>
@@ -254,34 +224,6 @@
   </div>
 </section>
 
-<section class="reviews-bg" id="reviews">
-  <div class="container">
-    <div class="section-label" data-i18n="reviews_label">Beoordelingen</div>
-    <h2 class="section-title" data-i18n="reviews_title">Wat bewoners zeggen</h2>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <p class="review-quote" data-i18n="review1_quote">Fijn huis, goede sfeer en alles is netjes. Ik woon hier met plezier.</p>
-        <span class="review-name" data-i18n="review1_name">Emma</span>
-        <span class="review-study" data-i18n="review1_study">Rechten</span>
-        <div class="review-stars" aria-hidden="true">★★★★★</div>
-      </div>
-      <div class="review-card">
-        <p class="review-quote" data-i18n="review2_quote">Ideale locatie voor de universiteit. De kamers zijn ruim en de huisgenoten zijn tof.</p>
-        <span class="review-name" data-i18n="review2_name">Lucas</span>
-        <span class="review-study" data-i18n="review2_study">Ingenieurswetenschappen</span>
-        <div class="review-stars" aria-hidden="true">★★★★★</div>
-      </div>
-      <div class="review-card">
-        <p class="review-quote" data-i18n="review3_quote">Snel gereageerd op vragen, alles duidelijk geregeld. Echt een aanrader.</p>
-        <span class="review-name" data-i18n="review3_name">Sara</span>
-        <span class="review-study" data-i18n="review3_study">Psychologie</span>
-        <div class="review-stars" aria-hidden="true">★★★★★</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ROOMS -->
 <section class="rooms-bg" id="rooms">
   <div class="container">
     <div class="section-label" data-i18n="rooms_label">Kamers</div>
@@ -326,14 +268,14 @@
         </div>
         <ul class="nearby-list">
           <li class="nearby-item"><span class="nearby-icon">🎓</span><span class="nearby-name" data-i18n="near1_name">Universiteit campussen UZ en FFW</span><span class="nearby-dist" data-i18n="near1_dist">5 min lopen</span></li>
-          <li class="nearby-item"><span class="nearby-icon">🚌</span><span class="nearby-name" data-i18n="near2_name">Bushalte (lijnen 4, 7, 11)</span><span class="nearby-dist" data-i18n="near2_dist">2 min lopen</span></li>
+          <li class="nearby-item"><span class="nearby-icon">🚌</span><span class="nearby-name" data-i18n="near2_name">Openbaar vervoer</span><span class="nearby-dist" data-i18n="near2_dist">2 min lopen</span></li>
           <li class="nearby-item"><span class="nearby-icon">🛒</span><span class="nearby-name" data-i18n="near3_name">Aldi supermarkt</span><span class="nearby-dist" data-i18n="near3_dist">8 min lopen</span></li>
-          <li class="nearby-item"><span class="nearby-icon">🏙️</span><span class="nearby-name" data-i18n="near4_name">Stadscentrum</span><span class="nearby-dist" data-i18n="near4_dist">15 min met de bus</span></li>
+          <li class="nearby-item"><span class="nearby-icon">🏙️</span><span class="nearby-name" data-i18n="near4_name">Stadscentrum</span><span class="nearby-dist" data-i18n="near4_dist">5 min fietsen</span></li>
           <li class="nearby-item"><span class="nearby-icon">🏥</span><span class="nearby-name" data-i18n="near5_name">Studentengezondheidscentrum</span><span class="nearby-dist" data-i18n="near5_dist">10 min lopen</span></li>
         </ul>
       </div>
       <a class="map-placeholder" href="https://www.google.com/maps/place/Ottergemsesteenweg+353,+9000+Gent" target="_blank" rel="noopener noreferrer">
-        <img src="images/Map Grey.png" alt="Locatie Otter 353 — klik om te openen in Google Maps">
+        <img src="images/Map Color.png" alt="Locatie Otter 353 — klik om te openen in Google Maps">
       </a>
     </div>
   </div>
@@ -362,17 +304,17 @@
           <label data-i18n="form_room">Ik heb interesse in</label>
           <select name="room" id="room-select">
             <option value="" data-i18n="form_room_placeholder">Kies een kamertype...</option>
-            <option value="Eénpersoonskamer (€450/maand)" data-i18n="form_room_opt1">Eénpersoonskamer (€450/maand)</option>
-            <option value="Grote éénpersoonskamer (€585/maand)" data-i18n="form_room_opt2">Grote éénpersoonskamer (€585/maand)</option>
-            <option value="Studio (€615/maand)" data-i18n="form_room_opt3">Studio (€615/maand)</option>
+            <option value="Eénpersoonskamer" data-i18n="form_room_opt1">Eénpersoonskamer (v.a. €567/maand)</option>
+            <option value="Grote éénpersoonskamer" data-i18n="form_room_opt2">Grote éénpersoonskamer (v.a. €603/maand)</option>
+            <option value="Studio" data-i18n="form_room_opt3">Studio (v.a. €627/maand)</option>
           </select>
         </div>
         <div class="form-group">
           <label data-i18n="form_when">Vanaf wanneer ben je op zoek?</label>
-          <input type="text" name="startDate" data-i18n-placeholder="form_when_placeholder" placeholder="bv. september 2025, zo snel mogelijk, ...">
+          <input type="text" name="startDate" data-i18n-placeholder="form_when_placeholder" placeholder="bv. september 2026, zo snel mogelijk, ...">
         </div>
         <div class="form-group"><label data-i18n="form_message">Vertel iets meer over wat je zoekt</label><textarea name="message" data-i18n-placeholder="form_message_placeholder" placeholder="Ik begin in september in het eerste jaar Kinesiterapie en ben op zoek naar..."></textarea></div>
-        <button type="submit" class="form-submit" data-i18n="form_submit">Toon mijn interesse →</button>
+        <button type="submit" class="form-submit" data-i18n="form_submit">Ik ben geïnteresseerd →</button>
       </form>
       <div id="form-success" class="form-success" style="display:none" data-i18n="form_success_msg">Bedankt! We hebben je interesse ontvangen en contacteren je zodra er een geschikte kamer vrijkomt.</div>
     </div>
@@ -384,7 +326,6 @@
   <span style="font-size:0.8rem;margin-top:0.5rem;display:block" data-i18n="footer_copyright">© 2026 Otter 353. Alle rechten voorbehouden.</span>
 </footer>
 
-<!-- AMENITY MODAL -->
 <div class="amenity-modal-overlay" id="amenity-modal" aria-hidden="true">
   <div class="amenity-modal" role="dialog" aria-modal="true" aria-labelledby="amenity-modal-title">
     <div class="amenity-modal-header">
@@ -403,7 +344,6 @@
   </div>
 </div>
 
-<!-- ROOM MODAL -->
 <div class="room-modal-overlay" id="room-modal">
   <div class="room-modal">
     <div class="room-modal-header">
@@ -462,10 +402,8 @@ function renderTypes() {
     var tName = activeLang === 'en' ? t.nameEn : t.name;
     var fromTxt = activeLang === 'en' ? 'from' : 'v.a.';
     btn.innerHTML =
-      '<div class="type-btn-photo"><img src="' + t.photo + '" alt="' + tName + '" onerror="this.style.display=\'none\'"></div>' +
       '<div class="type-btn-info">' +
         '<div class="type-btn-name">' + tName + '</div>' +
-        '<div class="type-btn-count">' + t.rooms.length + (activeLang === 'en' ? ' rooms' : ' kamers') + '</div>' +
         '<div class="type-btn-price">' + fromTxt + ' €' + t.priceFrom + ' / ' + (activeLang === 'en' ? 'month' : 'maand') + '</div>' +
       '</div>';
     btn.addEventListener('click', function() { activeType = t.id; renderTypes(); renderRooms(); });
@@ -482,7 +420,6 @@ function renderRooms() {
     var fromTxt = activeLang === 'en' ? 'from' : 'v.a.';
     var perTxt = activeLang === 'en' ? '/ month' : '/ maand';
     var inclTxt = activeLang === 'en' ? 'Bills incl.' : 'Kosten incl.';
-    var viewTxt = activeLang === 'en' ? "📷 View photos & details" : "📷 Bekijk foto's & details";
     var card = document.createElement('div');
     card.className = 'room-card';
     card.innerHTML =
@@ -496,7 +433,7 @@ function renderRooms() {
         '<div class="room-desc">' + desc + '</div>' +
         '<div class="room-price-row"><span class="room-price-prefix">' + fromTxt + '</span><span class="room-price">€' + r.price + '</span><span class="room-price-suffix">' + perTxt + '</span></div>' +
         '<div class="room-tags"><span class="room-tag">' + r.size + ' m²</span><span class="room-tag">' + floorLabel(r.floor) + '</span><span class="room-tag">' + inclTxt + '</span></div>' +
-        '<button class="room-btn" data-room="' + r.id + '">' + viewTxt + '</button>' +
+        '<button class="room-btn" data-room="' + r.id + '">' + (activeLang === 'en' ? "📷 View photos & details" : "📷 Bekijk foto's & details") + '</button>' +
       '</div>';
     grid.appendChild(card);
   });
@@ -523,7 +460,7 @@ function openRoomModal(id) {
   document.getElementById('room-modal-grid').innerHTML =
     '<div class="room-modal-item"><div class="room-modal-label">' + (activeLang === 'en' ? 'Size' : 'Oppervlakte') + '</div><div class="room-modal-val">' + currentRoom.size + ' m²</div></div>' +
     '<div class="room-modal-item"><div class="room-modal-label">' + (activeLang === 'en' ? 'Floor' : 'Verdieping') + '</div><div class="room-modal-val">' + floorLabel(currentRoom.floor) + '</div></div>' +
-    '<div class="room-modal-item"><div class="room-modal-label">' + (activeLang === 'en' ? 'Price' : 'Prijs') + '</div><div class="room-modal-val">v.a. €' + currentRoom.price + '/maand</div></div>' +
+    '<div class="room-modal-item"><div class="room-modal-label">' + (activeLang === 'en' ? 'Price' : 'Prijs') + '</div><div class="room-modal-val">€' + currentRoom.price + '/maand</div></div>' +
     '<div class="room-modal-item"><div class="room-modal-label">' + (activeLang === 'en' ? 'Availability' : 'Beschikbaarheid') + '</div><div class="room-modal-val">' + (activeLang === 'en' ? 'Currently rented' : 'Momenteel verhuurd') + '</div></div>';
   document.getElementById('room-modal-cta').textContent = activeLang === 'en' ? '✉️ Register interest for this room type' : '✉️ Toon interesse voor dit kamertype';
   document.getElementById('room-modal').classList.add('open');
@@ -576,21 +513,16 @@ renderRooms();
   var defaultLang = 'nl';
   var t = {
     nl: {
-      nav_about:'Over ons', nav_reviews:'Beoordelingen', nav_rooms:'Kamers', nav_amenities:'Voorzieningen', nav_location:'Locatie', nav_contact:'Contact',       nav_cta:'Neem contact',
-      info_banner:'🏠 <strong>Op dit moment zijn alle kamers verhuurd.</strong> Geïnteresseerd? Neem contact op — we laten je als eerste weten zodra er een kamer vrijkomt.',
-      hero_badge:'🦦 Studentenkamers · Sinds 2018',
+      nav_about:'Over ons', nav_rooms:'Kamers', nav_amenities:'Voorzieningen', nav_location:'Locatie', nav_contact:'Contact', nav_cta:'Neem contact',
+      info_banner:'🏠 <strong>Op dit moment zijn alle kamers verhuurd voor het lopend academiejaar.</strong> Geïnteresseerd voor het academiejaar 2026-2027? Neem contact op — we laten je als eerste weten zodra er een kamer vrijkomt.',
       hero_h1:'<span>Otter 353</span><br><span class="hero-h1-line2">Jouw verhaal begint hier.</span>',
       hero_p:'Comfortabele, betaalbare studentenkamers in een gastvrij studentenhuis — alles om te studeren en van het studentenleven te genieten.',
-      hero_btn_rooms:'Bekijk de kamers',       hero_btn_viewing:'Neem contact',
-      stat_rooms:'Aantal kamers', stat_rating:'Beoordeling bewoners', stat_campus:'Van campus',
+      hero_btn_rooms:'Bekijk de kamers', hero_btn_viewing:'Neem contact',
+      stat_rooms:'Aantal kamers', stat_campus:'Van campus',
       about_label:'Over het huis', about_title:'Een fijne plek om te wonen en studeren',
       about_p1:'Otter 353 is een gezellig studentenhuis met moderne comfortabele kamers — ruim, kwalitatief onderhouden en instapklaar. Gelegen op een toplocatie dichtbij de campussen, vind je hier alles wat je nodig hebt om je studies te combineren met een fijn studentenleven.',
       about_p2:'We zetten ons in voor een schoon, veilig en gastvrij huis — waar het welzijn van bewoners centraal staat.',
       about_f1:'Verzorgd en goed onderhouden — alles is proper en in orde', about_f2:'Kosten inclusief — geen verrassingen', about_f3:'Eigen tuin — een groene plek om even buiten tot rust te komen',
-      reviews_label:'Beoordelingen', reviews_title:'Wat bewoners zeggen',
-      review1_quote:'Fijn huis, goede sfeer en alles is netjes. Ik woon hier met plezier.', review1_name:'Emma', review1_study:'Rechten',
-      review2_quote:'Ideale locatie voor de universiteit. De kamers zijn ruim en de huisgenoten zijn tof.', review2_name:'Lucas', review2_study:'Ingenieurswetenschappen',
-      review3_quote:'Snel gereageerd op vragen, alles duidelijk geregeld. Echt een aanrader.', review3_name:'Sara', review3_study:'Psychologie',
       rooms_label:'Kamers', rooms_title:'Ontdek de kamers', rooms_sub:'Hieronder zie je een overzicht van alle kamers — met foto\'s, afmetingen en prijzen. Op dit moment zijn alle kamers bezet. Geïnteresseerd? Laat het ons weten en we contacteren je zodra er iets vrijkomt.',
       amen_label:'Voorzieningen', amen_title:'Alles wat je nodig hebt', amen_sub:'Alle voorzieningen zitten in de maandhuur — geen verborgen kosten.', amen_click:"Klik op de voorziening voor foto's en details.",
       amen1_name:'Snel wifi', amen1_desc:'Gigabit glasvezel in het hele huis',
@@ -605,19 +537,19 @@ renderRooms();
       amen11_name:'Brandveiligheid', amen11_desc:'Rookmelders en blusmiddelen aanwezig — voor je veiligheid.',
       loc_label:'Locatie', loc_title:'Precies waar je moet zijn', loc_p:'Otter 353 ligt ideaal voor studenten: dicht bij campus, openbaar vervoer, supermarkten en het centrum.',
       address_label:'Adres',
-      near1_name:'Universiteit campussen UZ en FFW', near1_dist:'5 min lopen',
-      near2_name:'Bushalte (lijnen 4, 7, 11)', near2_dist:'2 min lopen',
-      near3_name:'Aldi supermarkt', near3_dist:'8 min lopen',
-      near4_name:'Stadscentrum', near4_dist:'15 min met de bus',
-      near5_name:'Studentengezondheidscentrum', near5_dist:'10 min lopen',
+      near1_name:'Universiteit campussen UZ en FFW', near1_dist:'5 min stappen',
+      near2_name:'Openbaar vervoer', near2_dist:'2 min stappen',
+      near3_name:'Aldi supermarkt', near3_dist:'8 min stappen',
+      near4_name:'Stadscentrum', near4_dist:'5 min fietsen',
+      near5_name:'UGent Studentengezondheidscentrum', near5_dist:'10 min stappen',
       contact_label:'Interesse tonen', contact_title:'Geïnteresseerd? Laat het ons weten.',
       contact_p:'Op dit moment zijn alle kamers verhuurd, maar er komen regelmatig plaatsen vrij. Vul het formulier in en wij contacteren jou als eerste zodra er een kamer beschikbaar is die bij jou past.',
       contact_email_label:'E-mail', contact_phone_label:'Telefoon / WhatsApp', contact_hours_label:'Reactietijd', contact_hours:'Meestal binnen de dag',
       form_fname:'Voornaam', form_fname_placeholder:'Jan', form_lname:'Achternaam', form_lname_placeholder:'Jansen',
       form_email:'E-mail', form_email_placeholder:'jan@universiteit.be',
       form_room:'Ik heb interesse in', form_room_placeholder:'Kies een kamertype...',
-      form_room_opt1:'Eénpersoonskamer (€450/maand)', form_room_opt2:'Grote éénpersoonskamer (€585/maand)', form_room_opt3:'Studio (€615/maand)',
-      form_when:'Vanaf wanneer ben je op zoek?', form_when_placeholder:'bv. september 2025, zo snel mogelijk, ...',
+      form_room_opt1:'Eénpersoonskamer (v.a. €567/maand)', form_room_opt2:'Grote éénpersoonskamer (v.a. €603/maand)', form_room_opt3:'Studio (v.a. €627/maand)',
+      form_when:'Vanaf wanneer ben je op zoek?', form_when_placeholder:'bv. september 2026, zo snel mogelijk, ...',
       form_message:'Vertel iets meer over wat je zoekt', form_message_placeholder:'Ik begin in september in het eerste jaar Kinesiterapie en ben op zoek naar...',
       form_submit:'Ik ben geïnteresseerd →', form_success_msg:'Bedankt! We hebben je interesse ontvangen en contacteren je zodra er een geschikte kamer vrijkomt.',
       footer_line:'<strong>Otter 353</strong> · Ottergemsesteenweg 353, 9000 Gent · vanhoordeb@gmail.com · +32 478 28 21 62',
@@ -625,21 +557,16 @@ renderRooms();
       title:'Otter 353 — Studentenhuis'
     },
     en: {
-      nav_about:'About', nav_reviews:'Reviews', nav_rooms:'Rooms', nav_amenities:'Amenities', nav_location:'Location', nav_contact:'Contact', nav_cta:'Register Interest',
-      info_banner:'🏠 <strong>All rooms are currently rented.</strong> Register your interest below — we\'ll contact you first when a room becomes available.',
-      hero_badge:'🦦 Student Living · Since 2018',
+      nav_about:'About', nav_rooms:'Rooms', nav_amenities:'Amenities', nav_location:'Location', nav_contact:'Contact', nav_cta:'Get in Touch',
+      info_banner:'🏠 <strong>All rooms are currently rented for the ongoing academic year.</strong> Interested for the academic year 2026-2027? Get in touch — we\'ll let you know as soon as a room becomes available.',
       hero_h1:'<span>Otter 353</span><br><span class="hero-h1-line2">Where student life begins.</span>',
       hero_p:'Comfortable, affordable student rooms in a friendly shared house — everything you need to focus on your studies and enjoy student life.',
-      hero_btn_rooms:'Explore the Rooms', hero_btn_viewing:'Register Your Interest',
-      stat_rooms:'Number of rooms', stat_rating:'Resident Rating', stat_campus:'From Campus',
+      hero_btn_rooms:'Explore the Rooms', hero_btn_viewing:'Get in Touch',
+      stat_rooms:'Number of rooms', stat_campus:'From Campus',
       about_label:'About the House', about_title:'A great place to live & study',
       about_p1:"Otter 353 is a cosy student house with modern, comfortable rooms — spacious, well-kept and move-in ready. Located in a prime spot close to the campuses, you'll find everything you need to combine your studies with a great student life.",
       about_p2:'We are committed to a clean, safe and welcoming house — where the wellbeing of residents comes first.',
-      about_f1:'Professionally managed with fast response maintenance', about_f2:'Bills included — no surprise costs',
-      reviews_label:'Reviews', reviews_title:'What residents say',
-      review1_quote:'Nice house, good atmosphere and everything is tidy. I enjoy living here.', review1_name:'Emma', review1_study:'Law',
-      review2_quote:'Ideal location for the university. The rooms are spacious and the housemates are great.', review2_name:'Lucas', review2_study:'Engineering',
-      review3_quote:'Quick response to questions, everything clearly arranged. Really recommend it.', review3_name:'Sara', review3_study:'Psychology',
+      about_f1:'Well maintained — everything is clean and in order', about_f2:'Bills included — no surprise costs', about_f3:'Private garden — a green spot to relax outdoors',
       rooms_label:'Rooms', rooms_title:'Explore the Rooms', rooms_sub:"Browse all rooms below — with photos, sizes and prices. All rooms are currently occupied. Interested? Let us know and we'll reach out when something becomes available.",
       amen_label:'Amenities', amen_title:'Everything you need', amen_sub:'All amenities are included in your monthly rent — no hidden fees.', amen_click:'Click on the amenity for photos and details.',
       amen1_name:'High-Speed WiFi', amen1_desc:'Gigabit fibre broadband throughout the house',
@@ -650,25 +577,25 @@ renderRooms();
       amen7_name:'Bike Storage', amen7_desc:'Bikes are stored safely indoors in the spacious bike shed.',
       amen8_name:'Communal Cleaning', amen8_desc:'Regular cleaning of shared spaces',
       amen9_name:'Darts', amen9_desc:'Cosy darts corner to relax with your housemates.',
-      amen10_name:'Shared garden', amen10_desc:'A cosy spot – perfect for chilling out.',
-      amen11_name:'Fire safety', amen11_desc:'Smoke detectors and fire extinguishers — for your safety.',
+      amen10_name:'Shared Garden', amen10_desc:'A cosy spot – perfect for chilling out.',
+      amen11_name:'Fire Safety', amen11_desc:'Smoke detectors and fire extinguishers — for your safety.',
       loc_label:'Location', loc_title:'Right where you need to be', loc_p:'Otter 353 is ideally located for students, with quick access to campus, public transport, supermarkets, and the city centre.',
       address_label:'Address',
       near1_name:'University campuses UZ and FFW', near1_dist:'5 min walk',
-      near2_name:'Bus Stop (Routes 4, 7, 11)', near2_dist:'2 min walk',
+      near2_name:'Public transport', near2_dist:'2 min walk',
       near3_name:'Aldi supermarket', near3_dist:'8 min walk',
-      near4_name:'City Centre', near4_dist:'15 min by bus',
-      near5_name:'Student Health Centre', near5_dist:'10 min walk',
-      contact_label:'Register Interest', contact_title:'Interested? Let us know.',
+      near4_name:'City Centre', near4_dist:'5 min by bike',
+      near5_name:'UGent Student Health Centre', near5_dist:'10 min walk',
+      contact_label:'Get in Touch', contact_title:'Interested? Let us know.',
       contact_p:"All rooms are currently rented, but spots open up regularly. Fill in the form and we'll get in touch as soon as a suitable room becomes available.",
       contact_email_label:'Email', contact_phone_label:'Phone / WhatsApp', contact_hours_label:'Response Time', contact_hours:'Usually within the day',
       form_fname:'First Name', form_fname_placeholder:'Jane', form_lname:'Last Name', form_lname_placeholder:'Doe',
       form_email:'Email', form_email_placeholder:'jane@university.ie',
       form_room:"I'm interested in", form_room_placeholder:'Select a room type...',
-      form_room_opt1:'Single Room (€450/mo)', form_room_opt2:'Large Single Room (€585/mo)', form_room_opt3:'Studio (€615/mo)',
-      form_when:'When are you looking to move in?', form_when_placeholder:'e.g. September 2025, as soon as possible, ...',
+      form_room_opt1:'Single Room (from €567/mo)', form_room_opt2:'Large Single Room (from €603/mo)', form_room_opt3:'Studio (from €627/mo)',
+      form_when:'When are you looking to move in?', form_when_placeholder:'e.g. September 2026, as soon as possible, ...',
       form_message:'Tell us a bit more about what you are looking for', form_message_placeholder:"I'm interested in a room starting in September. I'll be studying...",
-      form_submit:'Register My Interest →', form_success_msg:"Thank you! We've received your interest and will contact you as soon as a suitable room becomes available.",
+      form_submit:"I'm Interested →", form_success_msg:"Thank you! We've received your interest and will contact you as soon as a suitable room becomes available.",
       footer_line:'<strong>Otter 353</strong> · Ottergemsesteenweg 353, 9000 Gent · vanhoordeb@gmail.com · +32 478 28 21 62',
       footer_copyright:'© 2026 Otter 353. All rights reserved.',
       title:'Otter 353 — Student House'
@@ -700,7 +627,8 @@ renderRooms();
 window.amenityPhotos = {
   amen1: [], amen2: ['images/Ottergmesesteenweg-Keuken.jpg','images/Ottergmesesteenweg-Keuken kookplaat.jpg'],
   amen3: [], amen4: ['images/Ottergmesesteenweg - Badkamer 2 nieuw.jpg','images/Ottergmesesteenweg - Badkamer 1 nieuw.jpg','images/Ottergmesesteenweg - Badkamer 3 nieuw.jpg'],
-  amen6: null, amen7: ['images/Ottergmesesteenweg-Fietsenbergplaats.jpg'],   amen8: ['images/Ottergmesesteenweg-Traphal verdiep 1.jpg'],
+  amen6: null, amen7: ['images/Ottergmesesteenweg-Fietsenbergplaats.jpg'],
+  amen8: ['images/Ottergmesesteenweg-Traphal verdiep 1.jpg','images/Ottergmesesteenweg-Vuilnisemmers.jpg'],
   amen9: ['images/Ottergmesesteenweg-Darts.jpg'], amen10: ['images/Ottergmesesteenweg-Tuin.jpg'], amen11: []
 };
 
